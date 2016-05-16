@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
+	<description>moonshot implementation</description>
+	<target name="moonshot">
+		<root class="APPLICATION" feature="make_and_launch"/>
+		<option warning="true" void_safety="transitional" syntax="provisional">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="default_standalone" location="$GITHUB\ewf\library\server\wsf\default\standalone-safe.ecf"/>
+		<library name="encoder-safe" location="$GITHUB\ewf\library\text\encoder\encoder-safe.ecf"/>
+		<library name="ewf_ext" location="$GITHUB\ewf_ext\ewf_ext.ecf"/>
+		<library name="framework" location="$GITHUB\framework\framework.ecf"/>
+		<library name="http-safe" location="$GITHUB\ewf\library\network\protocol\http\http-safe.ecf"/>
+		<library name="test_extension" location="$GITHUB\test_extension\test_extension.ecf"/>
+		<library name="wsf-safe" location="$GITHUB\ewf\library\server\wsf\wsf-safe.ecf"/>
+		<cluster name="moonshot" location=".\" recursive="true">
+			<file_rule>
+				<exclude>/.git$</exclude>
+				<exclude>/.svn$</exclude>
+				<exclude>/CVS$</exclude>
+				<exclude>/EIFGENs$</exclude>
+				<exclude>tests</exclude>
+			</file_rule>
+		</cluster>
+	</target>
+	<target name="test" extends="moonshot">
+		<description>moonshot Tests</description>
+		<root class="APPLICATION" feature="make_and_launch"/>
+		<file_rule>
+			<exclude>/.git$</exclude>
+			<exclude>/.svn$</exclude>
+			<exclude>/CVS$</exclude>
+			<exclude>/EIFGENs$</exclude>
+			<include>tests</include>
+		</file_rule>
+		<option profile="false">
+		</option>
+		<setting name="console_application" value="false"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
+		<cluster name="tests" location=".\tests\" recursive="true"/>
+	</target>
+</system>
