@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
 	<description>moonshot implementation</description>
 	<target name="moonshot">
@@ -8,11 +8,15 @@
 		</option>
 		<setting name="console_application" value="true"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="bem" location="$GITHUB\bem\bem.ecf"/>
+		<library name="css" location="$GITHUB\css\css.ecf"/>
 		<library name="default_standalone" location="$GITHUB\ewf\library\server\wsf\default\standalone-safe.ecf"/>
 		<library name="encoder-safe" location="$GITHUB\ewf\library\text\encoder\encoder-safe.ecf"/>
 		<library name="ewf_ext" location="$GITHUB\ewf_ext\ewf_ext.ecf"/>
 		<library name="framework" location="$GITHUB\framework\framework.ecf"/>
+		<library name="html" location="$GITHUB\html\html.ecf"/>
 		<library name="http-safe" location="$GITHUB\ewf\library\network\protocol\http\http-safe.ecf"/>
+		<library name="jqmobile" location="$GITHUB\jqmobile\jqmobile.ecf"/>
 		<library name="test_extension" location="$GITHUB\test_extension\test_extension.ecf"/>
 		<library name="wsf-safe" location="$GITHUB\ewf\library\server\wsf\wsf-safe.ecf"/>
 		<cluster name="moonshot" location=".\" recursive="true">
