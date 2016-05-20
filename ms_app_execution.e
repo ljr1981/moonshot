@@ -10,11 +10,15 @@ class
 	MS_APP_EXECUTION
 
 inherit
-	WSF_ROUTED_EXECUTION
+	EWX_APP_EXECUTION
+		redefine
+			setup_router
+		end
 
-	WSF_ROUTED_URI_HELPER
-
-	WSF_ROUTED_URI_TEMPLATE_HELPER
+	MS_ANY
+		undefine
+			default_create
+		end
 
 create
 	make
@@ -156,12 +160,6 @@ feature {NONE} -- Implementation: Constants
 		}
 </style>
 ]"
-
-	no_request_methods: detachable WSF_REQUEST_METHODS
-			-- `no_request_methods' constant.
-		once
-			Result := Void
-		end
 
 note
 	design: "[

@@ -14,6 +14,11 @@ inherit
 			initialize
 		end
 
+	MS_ANY
+		undefine
+			default_create
+		end
+
 create
 	make_and_launch
 
