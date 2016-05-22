@@ -11,7 +11,6 @@ html {
 body{
 
 	font-family: Helvetica Neue, Helvetica, Arial;
-	color: white;
 
 }
 
@@ -746,9 +745,17 @@ header {
 	top: 0px;
 	left: 0px;
 	z-index: 100;
-	background-color: #151a20;
+	background-color: #090A0F;
 
-}	
+}
+
+header h1, h2, h3 {
+
+  color: white;
+  display: inline-block;
+
+}
+
 
 #logo{
 
@@ -759,6 +766,14 @@ header {
 	background: url("Moonshot-Logo-Name-v1-320px-White.png") no-repeat center;
 	display: block;
 
+}
+
+#menu-icon {
+
+  display: hidden;
+  width: 40px;
+  height: 40px;
+  background: #4C8FEC url("Moonshot-Menu-Icon.png") center;
 }
 
 nav {
@@ -792,6 +807,7 @@ article {
 
 	margin-top: 120px;
 	margin-bottom: 120px;
+  clear: both;
 
 }
 
@@ -806,12 +822,12 @@ footer {
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
-	height: 120px;
+	height: 25%;
 	width: 100%;
 
 }
 
-footer img {
+#large-footer {
 
 	display: block;
 	margin-right: auto;
@@ -819,14 +835,27 @@ footer img {
 
 }
 
-h1 {
+#small-footer {
 
-	color: white;
-	display: inline-block;
+  display: none;
 
 }
 
 @media only screen and (max-width : 640px) {
+
+#large-footer {
+
+  display: none;
+
+}
+
+#small-footer {
+
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+}
 
 	header {
 
@@ -868,4 +897,15 @@ h1 {
 		display: block;
 
 	}
+
+  footer {
+
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 10%;
+  width: 100%;
+
+  }
+
 }
