@@ -10,7 +10,7 @@ class
 	MS_HOME_PAGE
 
 inherit
-	HTML_DIV
+	HTML_DIV_FACTORY
 		redefine
 			default_create
 		end
@@ -19,47 +19,29 @@ feature {NONE} -- Initialization
 
 	default_create
 			-- <Precursor>
-		note
-			EIS: "src=http://www.sample-videos.com/"
-			EIS: "src=http://www.biteable.com"
-		local
-			l_div: HTML_DIV
-			l_header: HTML_HEADER
-			l_nav: HTML_NAV
-			l_nav_list: HTML_UL
-			l_article: HTML_ARTICLE
-			l_footer: HTML_FOOTER
-			l_video: HTML_VIDEO
 		do
 			Precursor
 			set_class ("stars")
 				-- Header
-			create l_header
-			l_header.add_content (create {HTML_A}.make_with_id_and_href ("logo", "index.html"))
-			add_content (l_header)
+			new_header.set_id_and_href ("logo", "index.html")
+			add_content (last_new_header)
 				-- Navigation
-			create l_nav
-			create l_nav_list
-			l_nav_list.add_content (create {HTML_LI}.make_with_link_and_text ("index.html", "Home"))
-			l_nav_list.add_content (create {HTML_LI}.make_with_link_and_text ("moonshot.html", "What is a Moonshot?"))
-			l_nav_list.add_content (create {HTML_LI}.make_with_link_and_text ("blogs.html", "Blogs"))
-			l_nav_list.add_content (create {HTML_LI}.make_with_link_and_text ("contact.html", "Contact us"))
-			l_nav.add_content (l_nav_list)
-			l_header.add_content (l_nav)
+			new_nav.add_link_and_text ("index.html", "Home")
+			last_new_nav.add_link_and_text ("moonshot.html", "What is a Moonshot?")
+			last_new_nav.add_link_and_text ("blogs.html", "Blogs")
+			last_new_nav.add_link_and_text ("contact.html", "Contact us")
+			last_new_header.add_content (last_new_nav)
 				-- Contents
-			create l_article
-			l_article.set_class ("content")
-			create l_video.make_with_video_and_controls ("moonshot_small.mp4", "video/mp4", 640, 480)
-			l_video.set_auto_play
-			l_video.set_looped
-			l_article.add_content (l_video)
-			add_content (l_article)
+			new_article.set_class ("content")
+			new_video.set_src_type_height_width_with_controls ("moonshot_small.mp4", "video/mp4", 640, 480)
+			last_new_video.set_auto_play
+			last_new_video.set_looped
+			last_new_article.add_content (last_new_video)
+			add_content (last_new_article)
 				-- Footer
-			create l_footer
-			l_footer.add_images (<<["large-footer", "Moonshot-Website-Footer-640px.png"],
+			new_footer.add_images (<<["large-footer", "Moonshot-Website-Footer-640px.png"],
 									["small-footer", "Moonshot-Website-Footer-329px.png"]>>)
-
-			add_content (l_footer)
+			add_content (last_new_footer)
 		end
 
 note
