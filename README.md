@@ -60,3 +60,13 @@ Select the "test" target and click "OK". There will be another dialog asking you
 Click the "OK" button. Your project will begin loading and compiling. If all is well, you ought too see something like this as your result in the lower left of your IDE.
 
 ![My first compile] (/docs/my_first_compile.png)
+
+Once compiled, you can now Run your project (in work-bench) for the very first time.
+
+![My first run] (/docs/my_first_run.png)
+
+Once running, open your favorite browser and navigate to [localhost:9999/hello]
+
+![My first hello world] (/docs/my_first_hello_world.png)
+
+
