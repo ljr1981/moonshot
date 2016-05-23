@@ -2,7 +2,7 @@
 ## Getting the stuff you need for Moonshot (for Windows)
 Before you can start building web apps in Moonshot, there are a few things to get first. It is best to get them in order:
 
-1. Visual Studio 2013 Community Edition—all you’re really after is the MS C-compiler.
+1. Visual Studio 2013 Community Edition—all you’re really after is the Microsoft C-compiler (MSC).
 2. Eiffel Studio GPL—your language platform and IDE.
 3. GitHub Desktop App—so you can get all of the required Moonshot repos.
 
