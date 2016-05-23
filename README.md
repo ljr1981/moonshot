@@ -47,3 +47,16 @@ If GitHub Desktop has been installed and the computer is able to access the git.
 You are ready to create a new project. Open your Windows File Explorer and navigate to the GitHub/eifwingen folder. Find the eifwingen.exe and run it, following the steps in the graphic (below).
 
 ![Running EifWinGen] (/docs/create_new_moonshot_project.png)
+
+## Open the Moonshot Project
+In your GITHUB folder, you ought to now be able to find your newly built project, ready to open for the first time. Double-click to open the folder where your project is. Find the *.ECF file and double-click it. Eiffel Studio will load the Moonshot project and present you with this dialog:
+
+![Select test target] (/docs/my_first_target_selection.png)
+
+Select the "test" target and click "OK". There will be another dialog asking you to confirm folders:
+
+![Click OK] (/docs/my_first_choose_your_directory_dialog.png)
+
+Click the "OK" button. Your project will begin loading and compiling. If all is well, you ought too see something like this as your result in the lower left of your IDE.
+
+![My first compile] (/docs/my_first_compile.png)
