@@ -1,3 +1,6 @@
+![Moonshot One] (/files/Moonshot-Logo-v1-396px.png)
+
+![Moonshot Logo] (/files/Moonshot-Logo-Name-v1-320px.png)
 # Moonshot One — On Your Marks!
 ## Getting the stuff you need for Moonshot (for Windows)
 Before you can start building web apps in Moonshot, there are a few things to get first. It is best to get them in order:
