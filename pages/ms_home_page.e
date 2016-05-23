@@ -27,9 +27,9 @@ feature {NONE} -- Initialization
 			add_to_current (last_new_header)
 				-- Navigation
 			new_nav.add_link_and_text ("index.html", "Home")
-			last_new_nav.add_link_and_text ("moonshot.html", "What is a Moonshot?")
-			last_new_nav.add_link_and_text ("blogs.html", "Blogs")
-			last_new_nav.add_link_and_text ("contact.html", "Contact us")
+			last_new_nav.add_link_and_text ("index.html", "What is a Moonshot?") -->	moonshot
+			last_new_nav.add_link_and_text ("index.html", "Blogs") -->	blogs
+			last_new_nav.add_link_and_text ("index.html", "Contact us") -->	contact
 			last_new_header.add_content (last_new_nav)
 				-- Contents
 			new_article.set_class ("content")
