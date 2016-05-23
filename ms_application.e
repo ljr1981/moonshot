@@ -40,7 +40,7 @@ feature {NONE} -- Initialization
 				in the inherit clause (above).
 				]"
 		do
-			create {WSF_SERVICE_LAUNCHER_OPTIONS_FROM_INI} service_options.make_from_file ("ewf.ini")
+			create {WSF_SERVICE_LAUNCHER_OPTIONS} service_options.make_from_array (<<["port", 80]>>)
 			Precursor
 		end
 

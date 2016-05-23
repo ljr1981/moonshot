@@ -30,6 +30,7 @@ feature {NONE} -- Initialization
 		do
 			Precursor
 			map_uri_agent (uri_moonshot_home, agent moonshot_home_handler, no_request_methods)
+			map_uri_agent (uri_moonshot_home_index_html, agent moonshot_home_handler, no_request_methods)
 		end
 
 feature -- Execution
@@ -39,16 +40,19 @@ feature -- Execution
 		local
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
-			create l_page.make_standard ("Moonshot Home Page", "en", create {MS_HOME_PAGE})
-			l_page.add_js_file_script ("javascript.js")
+			create l_page.make_standard ("Moonshot | Rocket Science for Everyone!", "en", create {MS_HOME_PAGE})
+			l_page.add_js_file_script ("jquery-2.2.3.js")
+--			l_page.add_js_file_script ("https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js")
 			l_page.add_css_file_link ("stylesheet.css")
 			a_response.send (l_page)
 		end
 
 feature {NONE} -- Implementation: Constants
 
-	uri_moonshot_home: STRING = "/index.html"
+	uri_moonshot_home: STRING = "/"
 			-- `uri_moonshot_home' router template map.
+
+	uri_moonshot_home_index_html: STRING = "/index.html"
 
 ;note
 	design: "[
