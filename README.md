@@ -42,3 +42,8 @@ Download the raw file to the root of your $GITHUB folder in your My Documents fo
 If GitHub Desktop has been installed and the computer is able to access the git.exe, then the CMD script ought to clone in all of the Moonshot repositories.
 
 ![GitHub clone script] (/docs/git_clone_script.png)
+
+# Create a Moonshot Project!
+You are ready to create a new project. Open your Windows File Explorer and navigate to the GitHub/eifwingen folder. Find the eifwingen.exe and run it, following the steps in the graphic (below).
+
+![Running EifWinGen] (/docs/create_new_moonshot_project.png)
