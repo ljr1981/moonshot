@@ -42,7 +42,6 @@ feature -- Execution
 		do
 			create l_page.make_standard ("Moonshot | Rocket Science for Everyone!", "en", create {MS_HOME_PAGE})
 			l_page.add_js_file_script ("jquery-2.2.3.js")
---			l_page.add_js_file_script ("https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js")
 			l_page.add_css_file_link ("stylesheet.css")
 			a_response.send (l_page)
 		end
@@ -53,6 +52,10 @@ feature {NONE} -- Implementation: Constants
 			-- `uri_moonshot_home' router template map.
 
 	uri_moonshot_home_index_html: STRING = "/index.html"
+			-- `uri_moonshot_home_index_html' router template map.
+			-- Takes you to the same place as `uri_moonshot_home',
+			-- but is here for links in the page, whereas the other
+			-- is for the first access (e.g. www.moonshot.com).
 
 ;note
 	design: "[
