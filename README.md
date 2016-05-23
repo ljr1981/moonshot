@@ -19,7 +19,15 @@ Finally—the Eiffel Studio installer will finish. If it wants to open Eiffel St
 ## Setting a needed Environment Variable
 After installing GitHub Desktop, you will want to create a new Windows environment variable called GITHUB. This is because the Moonshot libraries are all GitHub repo’s, so they expect to live in that environment in your host computer. The GitHub Desktop installer automatically creates a GitHub folder in your Documents folder, so there is where you’ll point your GITHUB environment variable.
 
-Start by opening the environment variable editing tool from the Windows Control Panel. This will open the environment variable dialog. Click the “Environment Variables ...” button (bottom). Click “OK” and then “Apply”—Your done!
+Start by opening the environment variable editing tool from the Windows Control Panel. 
+
+![Start menu] (/docs/env_var_edit.png)
+
+This will open the environment variable dialog. 
+
+![Setting GITHUB environment variable] (/docs/setting_GITHUB_env_var.png)
+
+Click the “Environment Variables ...” button (bottom). Click “OK” and then “Apply”—Your done!
 
 GITHUB is now set and ready to go.
 
