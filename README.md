@@ -26,7 +26,7 @@ GITHUB is now set and ready to go.
 ## All those Moonshot Repos!
 Your last step is to fetch all of the Moonshot code repositories from GitHub. Here, you have a choice on how to get them. Below is a list of all the required repos that you need to clone to your local GITHUB folder. You can walk that list, cloning each one as you need to. The other choice is to run a cmd script that has the same Git-clone commands, but all in one go!
 
-You can find the DOS command prompt script https://github.com/ljr1981/moonshot/blob/master/git_moonshot.cmd.
+You can find the DOS command prompt script [here] (https://github.com/ljr1981/moonshot/blob/master/git_moonshot.cmd).
 
 Download the raw file to the root of your $GITHUB folder in your My Documents folder. Get to a DOS command prompt, change directories to the $GITHUB folder, and then run the CMD script: git_moonshot.cmd.
 
