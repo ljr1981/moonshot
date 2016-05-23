@@ -1,4 +1,4 @@
-![Moonshot One] (/files/Moonshot-Logo-v1-396px.png)
+![Moonshot Logo] (/files/Moonshot-Logo-Name-v1-320px.png)
 # Moonshot One — On Your Marks!
 ## Getting the stuff you need for Moonshot (for Windows)
 Before you can start building web apps in Moonshot, there are a few things to get first. It is best to get them in order:
@@ -70,6 +70,6 @@ Once running, open your favorite browser and navigate to [Hello World] (http://l
 
 ![My first hello world] (/docs/my_first_hello_world.png)
 
-![Moonshot Logo] (/files/Moonshot-Logo-Name-v1-320px.png)
+![Moonshot One] (/files/Moonshot-Logo-v1-396px.png)
 
 
