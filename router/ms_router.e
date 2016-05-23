@@ -1,13 +1,13 @@
 note
 	description: "[
-		Representation of a {MS_APP_EXECUTION}.
+		Representation of a {MS_ROUTER}.
 		]"
 	design: "[
 		See notes at the end of this class.
 		]"
 
 class
-	MS_APP_EXECUTION
+	MS_ROUTER
 
 inherit
 	EWX_APP_EXECUTION

@@ -1,15 +1,15 @@
 note
 	description: "[
-		Representation of a template Web Server {MS_APPLICATION} 
-			as a {WSF_DEFAULT_SERVICE} using {MS_APP_EXECUTION} as
+		Representation of a template Web Server {MS_SERVER} 
+			as a {WSF_DEFAULT_SERVICE} using {MS_ROUTER} as
 			a router/responder.
 		]"
 
 class
-	MS_APPLICATION
+	MS_SERVER
 
 inherit
-	WSF_DEFAULT_SERVICE [MS_APP_EXECUTION]
+	WSF_DEFAULT_SERVICE [MS_ROUTER]
 		redefine
 			initialize
 		end
@@ -52,9 +52,9 @@ note
 	(1) What process (program) will be the Web Server (httpd)? 	--> {WSF_DEFAULT_SERVICE}
 	(2) What process (program) will route request messages 
 			coming through the Web Server and then serve up
-			responses to the Web Client?						--> {MS_APP_EXECUTION}
+			responses to the Web Client?						--> {MS_ROUTER}
 	
-	See the {MS_APP_EXECUTION} class for more details about request
+	See the {MS_ROUTER} class for more details about request
 	routing and reponse building-and-sending.
 	]"
 
