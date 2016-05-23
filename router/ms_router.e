@@ -59,6 +59,9 @@ feature {NONE} -- Implementation: Constants
 
 ;note
 	design: "[
+		This is the primary Client-browser/device request router. The intent is to
+		provide space for immediate handling of the web-site home-page, but then
+		also for other pages (in other classes that handle the request executation).
 		]"
 
 end

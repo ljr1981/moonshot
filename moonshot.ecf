@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
 	<description>moonshot implementation</description>
 	<target name="moonshot">
-		<root class="MS_APPLICATION" feature="make_and_launch"/>
+		<root class="MS_SERVER" feature="make_and_launch"/>
 		<option warning="true" void_safety="transitional" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>

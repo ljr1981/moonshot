@@ -24,7 +24,7 @@ feature {NONE} -- Initialization
 			set_class ("stars")
 				-- Header
 			new_header.set_id_and_href ("logo", "index.html")
-			add_content (last_new_header)
+			add_to_current (last_new_header)
 				-- Navigation
 			new_nav.add_link_and_text ("index.html", "Home")
 			last_new_nav.add_link_and_text ("moonshot.html", "What is a Moonshot?")
@@ -34,14 +34,13 @@ feature {NONE} -- Initialization
 				-- Contents
 			new_article.set_class ("content")
 			new_video.set_src_type_height_width_with_controls ("moonshot_small.mp4", "video/mp4", 640, 480)
-			last_new_video.set_auto_play
-			last_new_video.set_looped
+			last_new_video.set_looped_auto_play
 			last_new_article.add_content (last_new_video)
-			add_content (last_new_article)
+			add_to_current (last_new_article)
 				-- Footer
-			new_footer.add_images (<<["large-footer", "Moonshot-Website-Footer-640px.png"],
-									["small-footer", "Moonshot-Website-Footer-329px.png"]>>)
-			add_content (last_new_footer)
+			new_footer.add_image (new_image.with_id_and_src ("large-footer", "Moonshot-Website-Footer-640px.png"))
+			last_new_footer.add_image (new_image.with_id_and_src ("small-footer", "Moonshot-Website-Footer-329px.png"))
+			add_to_current (last_new_footer)
 		end
 
 note
