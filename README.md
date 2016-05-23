@@ -65,7 +65,7 @@ Once compiled, you can now Run your project (in work-bench) for the very first t
 
 ![My first run] (/docs/my_first_run.png)
 
-Once running, open your favorite browser and navigate to [Hello World] (localhost:9999/hello)
+Once running, open your favorite browser and navigate to [Hello World] (http://localhost:9999/hello)
 
 ![My first hello world] (/docs/my_first_hello_world.png)
 
