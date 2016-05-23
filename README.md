@@ -7,7 +7,8 @@ Before you can start building web apps in Moonshot, there are a few things to ge
 3. [GitHub Desktop App] (https://desktop.github.com/)—so you can get all of the required Moonshot repos.
 
 Install each of the items above in their most basic and default installations—just follow the bouncing balls. Please do them in the precise order so everything “just works.” Don’t worry—if something screws up, we’ll do our best to provide documentation (as we go along) for troublesome setups!
-Some Native Tribal Knowledge
+
+## Some Native Tribal Knowledge
 Although you are installing Moonshot on Windows, the framework is cross-platform. Soon, you will have full instructions (and capacity) to code Moonshot web sites and apps on Linux and Mac. Hang on—we’re werkin’ on it! Until then, we’re in Windows.
 
 The base language for Moonshot is C through a trans-compiler called Eiffel using Eiffel Studio as the compiler. The basic idea is simple: The Moonshot native code in Eiffel is compiled to C/C++, which is then compiled to binaries, DLLs, and other targets using a C/C++ compiler. That’s where the Microsoft C-compiler (MSC) and Visual Studio come in. You can also use GCC or MinGW, but we recommend using the Microsoft C-compiler because—”it just works better!”
