@@ -27,7 +27,7 @@ feature {NONE} -- Initialization
 				-- Navigation
 			new_nav.add_link_and_text ({MS_BASE_PAGE}.Home_page, {MS_BASE_PAGE}.Home_label)
 			last_new_header.add_content (last_new_nav)
-			
+
 			navigation_setup
 
 			content_setup
@@ -71,6 +71,8 @@ feature -- Constants
 
 	Contact_us_label: STRING = "Contact us!"
 	Contact_us_page: STRING = "contact.html"
+	Contact_data_uri: STRING = "contact_data"
+	Thank_you_uri: STRING = "thank_you"
 
 	Whatis_label: STRING = "What is a Moonshot?"
 	Whatis_page: STRING = "moonshotwhatis.html"

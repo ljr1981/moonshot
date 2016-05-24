@@ -29,7 +29,10 @@ feature {NONE} -- Initialization
 
 				first_name := json_object_to_json_string_representation_attached ("first_name", l_object)
 				last_name := json_object_to_json_string_representation_attached ("last_name", l_object)
---				favorite_foods := fill_favorite_foods (json_object_to_tuple_as_json_array ("favorite_foods", l_object))
+
+				quote := json_object_to_json_string_representation ("quote", l_object)
+				response_needed := json_object_to_json_string_representation ("response_needed", l_object)
+				interests := fill_favorite_foods (json_object_to_tuple_as_json_array ("interests", l_object))
 			end
 
 feature -- Setters
@@ -52,6 +55,9 @@ feature -- Access
 
 	first_name: STRING attribute create Result.make_empty end
 	last_name: STRING attribute create Result.make_empty end
+	quote: detachable STRING attribute create Result.make_empty end
+	interests: ARRAY [STRING] attribute create Result.make_empty end
+	response_needed: detachable STRING attribute create Result.make_empty end
 
 feature {NONE} -- Implementation: JSON
 
@@ -59,7 +65,10 @@ feature {NONE} -- Implementation: JSON
 			-- <Precursor>
 		once
 			Result := <<"first_name",
-						"last_name"
+						"last_name",
+						"quote",
+						"interests",
+						"response_needed"
 						>>
 		end
 

@@ -34,6 +34,7 @@ feature {NONE} -- Initialization
 			map_uri_agent (uri_moonshot_home_index_html, agent moonshot_home_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_contact_us, agent moonshot_contact_us_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_contact_data, agent moonshot_contact_data_handler, post_method_request)
+			map_uri_agent (uri_moonshot_thank_you, agent moonshot_thank_you_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_blogs, agent moonshot_blogs_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_whatis, agent moonshot_whatis_handler, no_request_methods)
 		end
@@ -92,6 +93,17 @@ feature -- Execution
 			print ("Data            : " + l_json + "%N")
 		end
 
+	moonshot_thank_you_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)
+			-- Send `l_page' through `a_response' message based on `a_request'.
+		local
+			l_page: EWX_HTML_PAGE_RESPONSE
+		do
+			create l_page.make_standard (moonshot_title_text, "en", create {MS_CONTACT_THANK_YOU})
+			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
+			l_page.add_css_file_link (stylesheet_css_file_name)
+			a_response.send (l_page)
+		end
+
 	moonshot_blogs_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)
 			-- Send `l_page' through `a_response' message based on `a_request'.
 		local
@@ -134,8 +146,11 @@ feature {NONE} -- Implementation: Constants
 	uri_moonshot_contact_us: STRING once Result := "/" + {MS_BASE_PAGE}.Contact_us_page end
 			-- `uri_moonshot_contact_us' for the Contact-us router template map.
 
-	uri_moonshot_contact_data: STRING once Result := "/contact_data" end
+	uri_moonshot_contact_data: STRING once Result := "/" + {MS_BASE_PAGE}.Contact_data_uri end
 			-- `uri_moonshot_contact_data' for the Contact-data router template map.
+
+	uri_moonshot_thank_you: STRING once Result := "/" + {MS_BASE_PAGE}.Thank_you_uri end
+			-- `uri_moonshot_thank_you' for the Thank-you router template map.
 
 	uri_moonshot_blogs: STRING once Result := "/" + {MS_BASE_PAGE}.Blogs_page end
 			-- `uri_moonshot_blogs' for the Blogs router template map.
