@@ -2,11 +2,14 @@
 <system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
 	<description>moonshot implementation</description>
 	<target name="moonshot">
+		<description>Moonshot Software website</description>
 		<root class="MS_SERVER" feature="make_and_launch"/>
+		<version major="0" minor="0" release="0" build="1" company="Moonshot Software, LLC" product="Moonshot Software Website" trademark="Moonshot" copyright="2016"/>
 		<option warning="true" void_safety="transitional" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
+		<setting name="concurrency" value="scoop"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="bem" location="$GITHUB\bem\bem.ecf"/>
 		<library name="css" location="$GITHUB\css\css.ecf"/>
@@ -17,7 +20,10 @@
 		<library name="html" location="$GITHUB\html\html.ecf"/>
 		<library name="http-safe" location="$GITHUB\ewf\library\network\protocol\http\http-safe.ecf"/>
 		<library name="jqmobile" location="$GITHUB\jqmobile\jqmobile.ecf"/>
+		<library name="json" location="$ISE_LIBRARY\contrib\library\text\parser\json\library\json-safe.ecf"/>
+		<library name="json_ext" location="$GITHUB\json_ext\json_ext.ecf"/>
 		<library name="test_extension" location="$GITHUB\test_extension\test_extension.ecf"/>
+		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<library name="wsf-safe" location="$GITHUB\ewf\library\server\wsf\wsf-safe.ecf"/>
 		<cluster name="moonshot" location=".\" recursive="true">
 			<file_rule>

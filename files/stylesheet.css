@@ -72,6 +72,13 @@ li {
 
 article {
   clear: both;
+  position: fixed;
+  left: 50px;
+  bottom: 300px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 article p {
