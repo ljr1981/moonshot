@@ -43,6 +43,10 @@ article {
   color: white;
 }
 
+article.content-scrollable {
+  overflow: scroll;
+}
+
 footer {
   float: center;
   width: 1200px;
