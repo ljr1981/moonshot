@@ -8,6 +8,9 @@ class
 
 inherit
 	MS_BASE_PAGE
+		redefine
+			content_setup
+		end
 
 feature {NONE} -- Implementation
 
@@ -20,9 +23,8 @@ feature {NONE} -- Implementation
 	content_setup
 			-- <Precursor>
 		do
-			new_article.set_class ("content")
+			Precursor
 			last_new_article.add_text_content ("Thank you! You are on our Favorite People List!")
-			add_content (last_new_article)
 		end
 
 note

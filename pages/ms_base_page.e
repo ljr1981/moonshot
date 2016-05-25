@@ -29,7 +29,6 @@ feature {NONE} -- Initialization
 			last_new_header.add_content (last_new_nav)
 
 			navigation_setup
-
 			content_setup
 			footer_setup
 		end
@@ -50,14 +49,15 @@ feature {NONE} -- Basic Operations
 
 	content_setup
 			-- `content_setup'.
-		deferred
+		do
+			new_article.set_class ("content")
+			add_to_current (last_new_article)
 		end
 
 	footer_setup
 			-- `footer_setup'.
 		do
-			new_footer.add_image (new_image.with_id_and_src ("large-footer", "Moonshot-Website-Footer-640px.png"))
-			last_new_footer.add_image (new_image.with_id_and_src ("small-footer", "Moonshot-Website-Footer-329px.png"))
+			new_footer.add_image (new_image.with_id_and_src ("small-footer", "Moonshot-Website-Footer-329px.png"))
 			add_to_current (last_new_footer)
 		end
 

@@ -11,6 +11,9 @@ class
 
 inherit
 	MS_BASE_PAGE
+		redefine
+			content_setup
+		end
 
 feature {NONE} -- Initialization
 
@@ -26,11 +29,10 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		do
 				-- Contents
-			new_article.set_class ("content")
-			new_video.set_src_type_height_width_with_controls ("moonshot_small.mp4", "video/mp4", 640, 480)
+			Precursor
+			new_video.set_src_type_height_width_with_controls ("moonshot_small.mp4", "video/mp4", 400, 300)
 			last_new_video.set_looped_auto_play
 			last_new_article.add_content (last_new_video)
-			add_to_current (last_new_article)
 		end
 
 note

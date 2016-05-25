@@ -8,6 +8,9 @@ class
 
 inherit
 	MS_BASE_PAGE
+		redefine
+			content_setup
+		end
 
 feature {NONE} -- Initialization
 
@@ -21,7 +24,7 @@ feature {NONE} -- Initialization
 	content_setup
 			-- <Precursor>
 		do
-			do_nothing
+			Precursor
 		end
 
 note

@@ -10,7 +10,8 @@ inherit
 	MS_BASE_PAGE
 		redefine
 			make_restful,
-			make_restful_on_class
+			make_restful_on_class,
+			content_setup
 		end
 
 create
@@ -45,7 +46,7 @@ feature {NONE} -- Initialization
 	content_setup
 			-- <Precursor>
 		do
-			new_article.set_class ("content")
+			Precursor
 			new_form.set_method ("POST")
 			last_new_form.add_text_input_field_group (<<
 					["First Name:", "first_name", maxlength_equals (12), size_equals (12), include_break],
@@ -63,7 +64,6 @@ feature {NONE} -- Initialization
 			last_new_form.add_content (create {HTML_P}.make_with_content (<<
 					create {HTML_INPUT}.make_as_submit_button>>))
 			last_new_article.add_content (last_new_form)
-			add_to_current (last_new_article)
 		end
 
 note
