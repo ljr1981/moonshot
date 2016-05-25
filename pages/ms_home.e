@@ -30,8 +30,9 @@ feature {NONE} -- Initialization
 		do
 				-- Contents
 			Precursor
-			new_video.set_src_type_height_width_with_controls ("moonshot_small.mp4", "video/mp4", 400, 300)
-			last_new_video.set_looped_auto_play
+			new_video.set_src_type ("moonshot_small.mp4", "video/mp4")
+			last_new_video.set_looped
+			last_new_video.set_auto_play
 			last_new_article.add_content (last_new_video)
 		end
 
