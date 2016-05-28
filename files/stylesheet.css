@@ -43,6 +43,11 @@ article {
   color: white;
 }
 
+article div, article input {
+  padding: 5px;
+  border: 5px;
+}
+
 article.content-scrollable {
   overflow: scroll;
 }
