@@ -25,7 +25,7 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		do
 			Precursor
-			last_new_article.set_class ("content-scrollable")
+			last_new_article.set_class_names ("content-scrollable")
 			last_new_article.add_text_content (ipsum_lorem)
 		end
 

@@ -67,6 +67,10 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_CONTACT_US}.make_restful_on_class ("contact-us", "/contact_data"))
+				-- Bootstrap
+--			l_page.add_js_file_script ("https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+--			l_page.add_js_file_script ("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+--			l_page.add_css_file_link ("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
 			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
 			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)

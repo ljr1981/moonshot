@@ -23,9 +23,13 @@ feature {NONE} -- Initialization
 	make_restful_on_class (a_class, a_uri: STRING)
 		do
 			default_create
+				-- Bootstrap
+			set_class_names ("container")
+			last_new_form.set_role ("form")
+				-- Form
 			last_new_form.set_needs_redirection
 			last_new_form.set_redirection_uri ("/" + {MS_BASE_PAGE}.Thank_you_uri)
-			last_new_form.set_class (a_class)
+			last_new_form.set_class_names (a_class)
 			last_new_form.set_rest_uri (a_uri)
 		end
 

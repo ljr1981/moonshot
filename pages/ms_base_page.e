@@ -10,7 +10,7 @@ deferred class
 	MS_BASE_PAGE
 
 inherit
-	HTML_DIV_FACTORY
+	HTML_DIV
 		redefine
 			default_create
 		end
@@ -21,7 +21,7 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		do
 			Precursor
-			set_class ("stars")
+			set_class_names ("stars")
 			header_setup
 
 				-- Navigation
@@ -50,7 +50,7 @@ feature {NONE} -- Basic Operations
 	content_setup
 			-- `content_setup'.
 		do
-			new_article.set_class ("content")
+			new_article.set_class_names ("content")
 			add_to_current (last_new_article)
 		end
 
