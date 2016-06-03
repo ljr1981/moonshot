@@ -1,6 +1,6 @@
 note
 	description: "[
-		Representation of a template Web Server {MS_SERVER} 
+		Representation of a template Web Server {MS_SERVER}  
 			as a {WSF_DEFAULT_SERVICE} using {MS_ROUTER} as
 			a router/responder.
 		]"
