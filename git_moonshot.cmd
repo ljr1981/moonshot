@@ -1,5 +1,6 @@
 git clone https://github.com/ljr1981/bem
 git clone https://github.com/ljr1981/css
+git clone https://github.com/ljr1981/eav
 git clone https://github.com/ljr1981/ecf_generator
 git clone https://github.com/ljr1981/ecfwingen
 git clone https://github.com/EiffelWebFramework/EWF/
