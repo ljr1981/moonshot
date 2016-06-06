@@ -45,7 +45,7 @@ feature -- Default Execution
 			-- <Precursor>
 		do
 			Precursor
-			print ((create {DATE_TIME}.make_now).out + ": " + request.request_uri.out + "%N")
+--			print ((create {DATE_TIME}.make_now).out + ": " + request.request_uri.out + "%N")
 		end
 
 feature -- Execution
@@ -93,8 +93,8 @@ feature -- Execution
 			l_file.put_string (l_contact.representation_from_current (l_contact))
 			l_file.close
 
-			print ("Content-length  : " + a_request.content_length_value.out + "%N")
-			print ("Data            : " + l_json + "%N")
+--			print ("Content-length  : " + a_request.content_length_value.out + "%N")
+--			print ("Data            : " + l_json + "%N")
 		end
 
 	moonshot_thank_you_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)

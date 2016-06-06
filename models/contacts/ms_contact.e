@@ -19,7 +19,7 @@ feature {NONE} -- Initialization
 		make_from_json (a_json: STRING)
 				-- <Precursor>
 			require else
-				True
+				implemented: True
 			local
 				l_object: detachable JSON_OBJECT
 				l_any: detachable ANY

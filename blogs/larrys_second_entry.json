@@ -1,0 +1,6 @@
+{
+"title":"And Second Things Second",
+"author":"Larry Rix",
+"date":"Sunday, June 5th, 2016",
+"entry":"One of the first things to do is to improve this blogging system. In reality (behind the scenes), the blog entries are just JSON text files with Title, Author, Date, and Entry fields in JSON formatted text. The code in Moonshot (see {MS_BLOGS}.content_setup) is really simple and straight forward: Open the `blogs' folder, find any *.json files, read them, parse them, and then post them as <article> text."
+}
