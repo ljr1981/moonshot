@@ -1,0 +1,29 @@
+SENDING-SIDE
+============
+The sending-side needs its own NSSM process that watches for a new "setup.exe" ready to be depolyed from a deployment folder. Our recommendation is to give each GitHub project a deployment folder, where one will place new "setup.exe" files together with "deployment.ini" files, which contain the needed information on how and where to deploy.
+
+1. Notice a new "setup.exe" being placed into any "deployment" folder.
+2. Using WinSCP, send the new "setup.exe" to the target FTP Server (e.g. FileZilla Server).
+3. Move the "setup.exe" file to a "deployed" folder.
+4. Rename the file with YYYYMMDDSSSSS, where SSSSS = Seconds-since-midnight
+
+NOTE: We need to determine if we need some form of security beyond that provided by FileZilla?
+
+RECEIVING-SIDE
+==============
+On the development-side, we produce a new setup.exe installer. That installer contains everything needed to run the particular service EXE contained within it.
+
+The next task is to deploy that setup.exe from the development-side to the production-server-side, shut down the existing service, install the new, and then restart the newly installed service.
+
+1. Notice the receipt of a new "setup.exe" in downloads or received folder.
+2. Transfer the "setup.exe" to an installer folder.
+3. NSSN-shutdown the existing "service.exe".
+4. Run the "setup.exe".
+5. NSSM-wrap the new "service.exe".
+6. NSSM-run the new "service.exe".
+7. Send email/sms confirmation and logging.
+
+This seven-step process needs to be an NSSM service that is running on the production-server-side.
+
+Receipt of the new "setup.exe" will be performed by some instance of an FTP server like FileZilla Server.
+
