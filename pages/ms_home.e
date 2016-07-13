@@ -56,7 +56,9 @@ feature {NONE} -- Initialization
 			add_content (l_container)
 
 			create l_container.make_fluid
-			create l_collection.make_with_spans_images ([0,6,4,2], 50, <<
+			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text (1, "MOONSHOT!", "Kittens for Everyone!"))
+			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text (3, "That's right ...!", "We said, kittens for Everyone!"))
+			create l_collection.make_with_spans_images ([0,6,4,2], 125, <<
 										["kitten_300.jpg", "Kitten One", "Fred"],
 										["kitten_301.jpg", "Kitten Two", "Sally"],
 										["kitten_302.jpg", "Kitten Three", "George"],
