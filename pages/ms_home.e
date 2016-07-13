@@ -28,7 +28,12 @@ feature {NONE} -- Initialization
 		local
 			l_jt: BS_JUMBOTRON
 			l_gallery: BS_IMAGE_GALLERY
+			l_image: BS_IMAGE
 			l_container: BS_CONTAINER
+			l_images: BS_ROW
+			l_well: BS_WELL
+			l_size: INTEGER
+			l_collection: BS_IMAGE_COLLECTION
 		do
 			create l_jt.make_center (True)
 
@@ -48,6 +53,18 @@ feature {NONE} -- Initialization
 			create l_container.make
 			l_container.add_content (l_gallery)
 
+			add_content (l_container)
+
+			create l_container.make_fluid
+			create l_collection.make_with_spans_images ([0,6,4,2], 50, <<
+										["kitten_300.jpg", "Kitten One", "Fred"],
+										["kitten_301.jpg", "Kitten Two", "Sally"],
+										["kitten_302.jpg", "Kitten Three", "George"],
+										["kitten_303.jpg", "Kitten Four", "Henry"],
+										["kitten_304.jpg", "Kitten Five", "Mary"],
+										["kitten_305.jpg", "Kitten Six", "Daisy"]
+										>>)
+			l_container.add_content (l_collection)
 			add_content (l_container)
 		end
 
