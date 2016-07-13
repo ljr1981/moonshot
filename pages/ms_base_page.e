@@ -21,13 +21,7 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		do
 			Precursor
-			set_class_names ("stars")
 			header_setup
-
-				-- Navigation
-			new_nav.add_link_and_text ({MS_BASE_PAGE}.Home_page, {MS_BASE_PAGE}.Home_label)
-			last_new_header.add_content (last_new_nav)
-
 			navigation_setup
 			content_setup
 			footer_setup
@@ -38,8 +32,7 @@ feature {NONE} -- Basic Operations
 	header_setup
 			-- `header_setup'.
 		do
-			new_header.set_id_and_href ("logo", "index.html")
-			add_to_current (last_new_header)
+			do_nothing
 		end
 
 	navigation_setup
@@ -50,15 +43,13 @@ feature {NONE} -- Basic Operations
 	content_setup
 			-- `content_setup'.
 		do
-			new_article.set_class_names ("content")
-			add_to_current (last_new_article)
+			do_nothing
 		end
 
 	footer_setup
 			-- `footer_setup'.
 		do
-			new_footer.add_image (new_image.with_id_and_src ("small-footer", "Moonshot-Website-Footer-329px.png"))
-			add_to_current (last_new_footer)
+			do_nothing
 		end
 
 feature -- Constants

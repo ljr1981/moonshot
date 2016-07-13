@@ -13,6 +13,7 @@
 		<library name="app_env" location="$ISE_LIBRARY\unstable\library\web\cms\library\layout\layout-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="bem" location="..\bem\bem.ecf"/>
+		<library name="bootstrap" location="C:\Users\LJR19\Documents\GitHub\bootstrap\bootstrap.ecf"/>
 		<library name="css" location="..\css\css.ecf"/>
 		<library name="default_standalone" location="..\ewf\library\server\wsf\default\standalone-safe.ecf"/>
 		<library name="encoder-safe" location="..\ewf\library\text\encoder\encoder-safe.ecf"/>

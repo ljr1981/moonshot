@@ -20,20 +20,35 @@ feature {NONE} -- Initialization
 	navigation_setup
 			-- <Precursor>
 		do
-			last_new_nav.add_link_and_text ({MS_BASE_PAGE}.whatis_page, {MS_BASE_PAGE}.whatis_label)
-			last_new_nav.add_link_and_text ({MS_BASE_PAGE}.blogs_page, {MS_BASE_PAGE}.blogs_label)
-			last_new_nav.add_link_and_text ({MS_BASE_PAGE}.contact_us_page, {MS_BASE_PAGE}.contact_us_label)
+			do_nothing
 		end
 
 	content_setup
 			-- <Precursor>
+		local
+			l_jt: BS_JUMBOTRON
+			l_gallery: BS_IMAGE_GALLERY
+			l_container: BS_CONTAINER
 		do
-				-- Contents
-			Precursor
-			new_video.set_src_type ("moonshot_small.mp4", "video/mp4")
-			last_new_video.set_looped
-			last_new_video.set_auto_play
-			last_new_article.add_content (last_new_video)
+			create l_jt.make_center (True)
+
+			l_jt.item.new_hx.set_text_content ("MOONSHOT")
+			l_jt.item.last_new_hx.set_h1
+			l_jt.item.add_content (l_jt.item.last_new_hx)
+
+			l_jt.item.new_p.set_text_content ("Rocket Science for Everyone!")
+			l_jt.item.add_content (l_jt.item.last_new_p)
+
+			add_content (l_jt)
+
+			create l_gallery.make_for_phone ("Microservices?", "A single monolithic executable vs. many executables working together.", <<
+				[6, "Monolithic EXE", create {BS_IMAGE}.make_rounded ("executable.png", "Monolith", 400, 400)],
+				[6, "Microservice EXEs", create {BS_IMAGE}.make_rounded ("executables.png", "Microservices", 400, 400)]
+				>>)
+			create l_container.make
+			l_container.add_content (l_gallery)
+
+			add_content (l_container)
 		end
 
 note

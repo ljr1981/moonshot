@@ -45,7 +45,6 @@ feature -- Default Execution
 			-- <Precursor>
 		do
 			Precursor
---			print ((create {DATE_TIME}.make_now).out + ": " + request.request_uri.out + "%N")
 		end
 
 feature -- Execution
@@ -56,8 +55,6 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_HOME})
-			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
-			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)
 		end
 
@@ -67,12 +64,6 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_CONTACT_US}.make_restful_on_class ("contact-us", "/contact_data"))
-				-- Bootstrap
---			l_page.add_js_file_script ("https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
---			l_page.add_js_file_script ("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
---			l_page.add_css_file_link ("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
-			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
-			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)
 		end
 
@@ -92,9 +83,6 @@ feature -- Execution
 			create l_file.make_create_read_write ((create {EXECUTION_ENVIRONMENT}).current_working_path.name.out + "\data\pid_" + l_contact.first_name + "_" + l_contact.last_name + ".json")
 			l_file.put_string (l_contact.representation_from_current (l_contact))
 			l_file.close
-
---			print ("Content-length  : " + a_request.content_length_value.out + "%N")
---			print ("Data            : " + l_json + "%N")
 		end
 
 	moonshot_thank_you_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)
@@ -103,8 +91,6 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_CONTACT_THANK_YOU})
-			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
-			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)
 		end
 
@@ -114,8 +100,6 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_BLOGS})
-			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
-			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)
 		end
 
@@ -125,8 +109,6 @@ feature -- Execution
 			l_page: EWX_HTML_PAGE_RESPONSE
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_WHAT_IS_A_MOONSHOT})
-			l_page.add_js_file_script (jquery_2_2_3_js_file_name)
-			l_page.add_css_file_link (stylesheet_css_file_name)
 			a_response.send (l_page)
 		end
 
