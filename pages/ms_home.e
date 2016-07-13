@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Represenation of a {MS_HOME}
 		]"
@@ -34,6 +34,7 @@ feature {NONE} -- Initialization
 			l_well: BS_WELL
 			l_size: INTEGER
 			l_collection: BS_IMAGE_COLLECTION
+			l_alert: BS_ALERT
 		do
 			create l_jt.make_center (True)
 
@@ -46,12 +47,16 @@ feature {NONE} -- Initialization
 
 			add_content (l_jt)
 
+			create l_container.make
+
 			create l_gallery.make_for_phone ("Microservices?", "A single monolithic executable vs. many executables working together.", <<
 				[6, "Monolithic EXE", create {BS_IMAGE}.make_rounded ("executable.png", "Monolith", 400, 400)],
 				[6, "Microservice EXEs", create {BS_IMAGE}.make_rounded ("executables.png", "Microservices", 400, 400)]
 				>>)
-			create l_container.make
 			l_container.add_content (l_gallery)
+
+			create l_alert.make_info ("That brown-stuff you see up there is what you think it is!", True)
+			l_container.add_content (l_alert)
 
 			add_content (l_container)
 
@@ -67,6 +72,10 @@ feature {NONE} -- Initialization
 										["kitten_305.jpg", "Kitten Six", "Daisy"]
 										>>)
 			l_container.add_content (l_collection)
+
+			create l_alert.make_warning ("Kittens are notoriously cute--handle with care!", True)
+			l_container.add_content (l_alert)
+
 			add_content (l_container)
 		end
 
