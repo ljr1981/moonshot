@@ -26,7 +26,7 @@ feature {NONE} -- Initialization
 	content_setup
 			-- <Precursor>
 		local
-			l_jt: BS_JUMBOTRON
+			l_jumbotron: BS_JUMBOTRON
 			l_gallery: BS_IMAGE_GALLERY
 			l_image: BS_IMAGE
 			l_container: BS_CONTAINER
@@ -36,16 +36,16 @@ feature {NONE} -- Initialization
 			l_collection: BS_IMAGE_COLLECTION
 			l_alert: BS_ALERT
 		do
-			create l_jt.make_center (True)
+			create l_jumbotron.make_content_centered ({BS}.bleed_to_edge)
 
-			l_jt.item.new_hx.set_text_content ("MOONSHOT")
-			l_jt.item.last_new_hx.set_h1
-			l_jt.item.add_content (l_jt.item.last_new_hx)
+			l_jumbotron.item.new_hx.set_text_content ("MOONSHOT")
+			l_jumbotron.item.last_new_hx.set_h1
+			l_jumbotron.item.add_content (l_jumbotron.item.last_new_hx)
 
-			l_jt.item.new_p.set_text_content ("Rocket Science for Everyone!")
-			l_jt.item.add_content (l_jt.item.last_new_p)
+			l_jumbotron.item.new_p.set_text_content ("Rocket Science for Everyone!")
+			l_jumbotron.item.add_content (l_jumbotron.item.last_new_p)
 
-			add_content (l_jt)
+			add_content (l_jumbotron)
 
 			create l_container.make
 
@@ -55,14 +55,14 @@ feature {NONE} -- Initialization
 				>>)
 			l_container.add_content (l_gallery)
 
-			create l_alert.make_info ("That brown-stuff you see up there is what you think it is!", True)
+			create l_alert.make_info ("That brown-stuff you see up there is what you think it is!", {BS}.is_closable)
 			l_container.add_content (l_alert)
 
 			add_content (l_container)
 
 			create l_container.make_fluid
-			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text (1, "MOONSHOT!", "Kittens for Everyone!"))
-			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text (3, "That's right ...!", "We said, kittens for Everyone!"))
+			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text ({HX}.h1, "MOONSHOT!", "Kittens for Everyone!"))
+			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text ({HX}.h3, "That's right ...!", "We said, kittens for Everyone!"))
 			create l_collection.make_with_spans_images ([0,6,4,2], 125, <<
 										["kitten_300.jpg", "Kitten One", "Fred"],
 										["kitten_301.jpg", "Kitten Two", "Sally"],
@@ -73,7 +73,7 @@ feature {NONE} -- Initialization
 										>>)
 			l_container.add_content (l_collection)
 
-			create l_alert.make_warning ("Kittens are notoriously cute--handle with care!", True)
+			create l_alert.make_warning ("Kittens are notoriously cute--handle with care!", {BS}.is_closable)
 			l_container.add_content (l_alert)
 
 			add_content (l_container)
