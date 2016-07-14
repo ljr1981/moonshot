@@ -53,44 +53,10 @@ feature {NONE} -- Initialization
 
 			create l_container.make
 
-			create l_gallery.make_for_phone ("Microservices?", "A single monolithic executable vs. many executables working together.", <<
-				[6, "Monolithic EXE", create {BS_IMAGE}.make_rounded ("executable.png", "Monolith", 400, 400)],
-				[6, "Microservice EXEs", create {BS_IMAGE}.make_rounded ("executables.png", "Microservices", 400, 400)]
-				>>)
-			l_container.add_content (l_gallery)
-
-			create l_alert.make_info ("That brown-stuff you see up there is what you think it is!", {BS}.is_closable)
-			l_container.add_content (l_alert)
-
-			add_content (l_container)
-
-			create l_container.make_fluid
-			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text ({HX}.h1, "MOONSHOT!", "Kittens for Everyone!"))
-			l_container.add_content (create {BS_HX_AND_SMALL}.make_with_primary_and_secondary_text ({HX}.h3, "That's right ...!", "We said, kittens for Everyone!"))
-			create l_collection.make_with_spans_images ([0,6,4,2], 125, <<
-										["kitten_300.jpg", "Kitten One", "Fred"],
-										["kitten_301.jpg", "Kitten Two", "Sally"],
-										["kitten_302.jpg", "Kitten Three", "George"],
-										["kitten_303.jpg", "Kitten Four", "Henry"],
-										["kitten_304.jpg", "Kitten Five", "Mary"],
-										["kitten_305.jpg", "Kitten Six", "Daisy"]
-										>>)
+			create l_collection.make_with_linked_simple_images (<<["jumbotron.png", "Jumbotron", "jumbotron"]>>)
 			l_container.add_content (l_collection)
 
-			create l_alert.make_warning ("Kittens are notoriously cute--handle with care!", {BS}.is_closable)
-			l_container.add_content (l_alert)
-
 			add_content (l_container)
-
-			create l_container.make_fluid
-			create l_link_button.make_with_text ("Link to no-where ...", {BS}.btn_style_success, {BS}.btn_size_lg)
-			create l_button_button.make_with_text ("Just a button", {BS}.btn_style_danger, {BS}.btn_size_md)
-			create l_input_button.make_with_text ("Input this!", {BS}.btn_style_primary, {BS}.btn_size_sm)
-			create l_submit_button.make_submit_with_text ("SUMBIT to the button!", {BS}.btn_style_info, {BS}.btn_size_xs)
-			l_container.add_contents (<<l_link_button, l_button_button, l_input_button, l_submit_button>>)
-
-			add_content (l_container)
-
 		end
 
 note
