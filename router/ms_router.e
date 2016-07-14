@@ -53,8 +53,12 @@ feature -- Execution
 			-- Send `l_page' through `a_response' message based on `a_request'.
 		local
 			l_page: EWX_HTML_PAGE_RESPONSE
+			l_meta: HTML_META
 		do
 			create l_page.make_standard (moonshot_title_text, "en", create {MS_HOME})
+			create l_meta
+			l_meta.set_name ("viewport")
+			l_meta.set_content ("width=device-width, initial-scale=1")
 			a_response.send (l_page)
 		end
 
