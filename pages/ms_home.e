@@ -35,6 +35,10 @@ feature {NONE} -- Initialization
 			l_size: INTEGER
 			l_collection: BS_IMAGE_COLLECTION
 			l_alert: BS_ALERT
+			l_link_button: BS_LINK_BUTTON
+			l_button_button: BS_BUTTON_BUTTON
+			l_input_button: BS_INPUT_BUTTON
+			l_submit_button: BS_INPUT_BUTTON
 		do
 			create l_jumbotron.make_content_centered ({BS}.bleed_to_edge)
 
@@ -77,6 +81,16 @@ feature {NONE} -- Initialization
 			l_container.add_content (l_alert)
 
 			add_content (l_container)
+
+			create l_container.make_fluid
+			create l_link_button.make_with_text ("Link to no-where ...", {BS}.btn_style_success, {BS}.btn_size_lg)
+			create l_button_button.make_with_text ("Just a button", {BS}.btn_style_danger, {BS}.btn_size_md)
+			create l_input_button.make_with_text ("Input this!", {BS}.btn_style_primary, {BS}.btn_size_sm)
+			create l_submit_button.make_submit_with_text ("SUMBIT to the button!", {BS}.btn_style_info, {BS}.btn_size_xs)
+			l_container.add_contents (<<l_link_button, l_button_button, l_input_button, l_submit_button>>)
+
+			add_content (l_container)
+
 		end
 
 note
