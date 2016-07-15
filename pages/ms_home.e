@@ -27,18 +27,13 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		local
 			l_jumbotron: BS_JUMBOTRON
-			l_gallery: BS_IMAGE_GALLERY
-			l_image: BS_IMAGE
+			l_image: BS_LINK_IMAGE
 			l_container: BS_CONTAINER
-			l_images: BS_ROW
+			l_row: BS_ROW
+			l_col: BS_COLUMN
 			l_well: BS_WELL
-			l_size: INTEGER
 			l_collection: BS_IMAGE_COLLECTION
-			l_alert: BS_ALERT
-			l_link_button: BS_LINK_BUTTON
-			l_button_button: BS_BUTTON_BUTTON
-			l_input_button: BS_INPUT_BUTTON
-			l_submit_button: BS_INPUT_BUTTON
+			l_size: INTEGER
 		do
 			create l_jumbotron.make_content_centered ({BS}.bleed_to_edge)
 
@@ -53,11 +48,22 @@ feature {NONE} -- Initialization
 
 			create l_container.make
 
-			create l_collection.make_with_linked_simple_images (<<
-							["jumbotron.png", "Jumbotron ...", "jumbotron"],
-							["button.png", "Buttons ...", "buttons"]
-						>>)
-			l_container.add_content (l_collection)
+			create l_row.make_for_all_same (6, [0,6,4,2])
+
+			l_size := 100
+			l_col := l_row.columns [1]
+			create l_image.make_with_rounded_image ("jumbotron.png", "jumbotron", l_size, l_size)
+			l_col.add_content (l_image)
+
+			l_col := l_row.columns [2]
+			create l_image.make_with_rounded_image ("button.png", "buttons", l_size, l_size)
+			l_col.add_content (l_image)
+
+			l_col := l_row.columns [3]
+			create l_image.make_with_rounded_image ("x.png", "x", l_size, l_size)
+			l_col.add_content (l_image)
+
+			l_container.add_content (l_row)
 
 			add_content (l_container)
 		end

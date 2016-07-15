@@ -30,6 +30,7 @@ feature {NONE} -- Initialization
 			map_uri_agent (uri_moonshot_home_index_html, agent moonshot_home_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_jumbotron, agent moonshot_jumbotron_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_buttons, agent moonshot_buttons_handler, no_request_methods)
+			map_uri_agent (uri_moonshot_x, agent moonshot_x_handler, no_request_methods)
 		end
 
 feature -- Default Execution
@@ -81,6 +82,19 @@ feature -- Execution
 			a_response.send (l_page)
 		end
 
+	moonshot_x_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)
+			-- Send `l_page' through `a_response' message based on `a_request'.
+		local
+			l_page: EWX_HTML_PAGE_RESPONSE
+			l_meta: HTML_META
+		do
+			create l_page.make_standard (moonshot_title_text, "en", create {MS_EXPERIMENTAL})
+			create l_meta
+			l_meta.set_name ("viewport")
+			l_meta.set_content ("width=device-width, initial-scale=1")
+			a_response.send (l_page)
+		end
+
 feature {NONE} -- Implementation: Constants
 
 	moonshot_title_text: STRING = "Moonshot | Rocket Science for Everyone!"
@@ -99,6 +113,9 @@ feature {NONE} -- Implementation: Constants
 
 	uri_moonshot_buttons: STRING once Result := "/buttons" end
 			-- `uri_moonshot_buttons' for the buttons router template map.
+
+	uri_moonshot_x: STRING once Result := "/x" end
+			-- `uri_moonshot_x' for the x router template map.
 
 ;note
 	design: "[
