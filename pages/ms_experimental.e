@@ -35,7 +35,7 @@ feature {NONE} -- Initialization
 			Result.item.last_new_hx.set_h1
 			Result.item.add_content (Result.item.last_new_hx)
 
-			Result.item.new_p.set_text_content ("This page is experimental")
+			Result.item.new_p.set_text_content ("THIS is the experiment you're looking for!")
 			Result.item.add_content (Result.item.last_new_p)
 		end
 
