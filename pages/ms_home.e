@@ -53,7 +53,10 @@ feature {NONE} -- Initialization
 
 			create l_container.make
 
-			create l_collection.make_with_linked_simple_images (<<["jumbotron.png", "Jumbotron", "jumbotron"]>>)
+			create l_collection.make_with_linked_simple_images (<<
+							["jumbotron.png", "Jumbotron ...", "jumbotron"],
+							["button.png", "Buttons ...", "buttons"]
+						>>)
 			l_container.add_content (l_collection)
 
 			add_content (l_container)

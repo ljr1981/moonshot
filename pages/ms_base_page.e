@@ -15,12 +15,17 @@ inherit
 			default_create
 		end
 
+	MS_PAGE_CONTAINER
+		undefine
+			default_create,
+			out
+		end
+
 feature {NONE} -- Initialization
 
 	default_create
 			-- <Precursor>
 		do
-			Precursor
 			header_setup
 			navigation_setup
 			content_setup
