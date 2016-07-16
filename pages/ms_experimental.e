@@ -44,7 +44,15 @@ feature {NONE} -- Initialization
 
 	menu: BS_NAVBAR
 		do
-			create Result.make_menu (<<["jumbotron", "Jumbotron", <<>>], ["buttons", "Buttons", <<>>]>>, {BS}.navbar_is_default, ["index.html", "Home"])
+			create Result.make_menu (<<
+								["jumbotron", "Jumbotron", <<>>],
+								["buttons", "Buttons", <<>>],
+								["#", "Pages", <<
+									["index.html", "Home", <<>>],
+									["jumbotron", "Jumbotron", <<>>],
+									["buttons", "Buttons", <<>>]
+									>>]
+							>>, {BS}.navbar_is_inverse, ["index.html", "Home"])
 		end
 
 	jumbo_2: BS_CONTAINER
