@@ -24,6 +24,7 @@ feature {NONE} -- Initialization
 			-- <Precursor>
 		do
 			add_content (jumbotron)
+			add_content (menu)
 			add_content (jumbo_2)
 		end
 
@@ -37,6 +38,13 @@ feature {NONE} -- Initialization
 
 			Result.item.new_p.set_text_content ("THIS is the experiment you're looking for!")
 			Result.item.add_content (Result.item.last_new_p)
+
+			Result.item.add_content (create {HTML_P}.make_with_raw_text ("(The droids went that way -->)"))
+		end
+
+	menu: BS_NAVBAR
+		do
+			create Result.make_menu (<<["jumbotron", "Jumbotron", <<>>], ["buttons", "Buttons", <<>>]>>, {BS}.navbar_is_default, ["index.html", "Home"])
 		end
 
 	jumbo_2: BS_CONTAINER

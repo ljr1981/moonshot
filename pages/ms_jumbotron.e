@@ -30,16 +30,21 @@ feature {NONE} -- Initialization
 			add_content (final_result)
 		end
 
-	jumbotron: BS_JUMBOTRON
+	jumbotron: HTML_A
+		local
+			l_jumbo: BS_JUMBOTRON
 		do
-			create Result.make_content_centered ({BS}.bleed_to_edge)
+			create Result.make_with_id_and_href ("", "index.html")
+			create l_jumbo.make_content_centered ({BS}.bleed_to_edge)
 
-			Result.item.new_hx.set_text_content ("JUMBOTRON")
-			Result.item.last_new_hx.set_h1
-			Result.item.add_content (Result.item.last_new_hx)
+			l_jumbo.item.new_hx.set_text_content ("JUMBOTRON")
+			l_jumbo.item.last_new_hx.set_h1
+			l_jumbo.item.add_content (l_jumbo.item.last_new_hx)
 
-			Result.item.new_p.set_text_content ("The making of a page header ... or ... whatever!")
-			Result.item.add_content (Result.item.last_new_p)
+			l_jumbo.item.new_p.set_text_content ("The making of a page header ... or ... whatever!")
+			l_jumbo.item.add_content (l_jumbo.item.last_new_p)
+
+			Result.add_content (l_jumbo)
 		end
 
 	getting_routed: BS_CONTAINER
