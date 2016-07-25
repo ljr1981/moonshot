@@ -39,7 +39,7 @@ Source: "C:\Users\LJR19\Documents\GitHub\moonshot\ewf.ini"; DestDir: "{app}"; Fl
 Source: "C:\Users\LJR19\Documents\GitHub\moonshot\data\*"; DestDir: "{app}\data"; Flags: ignoreversion recursesubdirs
 Source: "C:\Users\LJR19\Documents\GitHub\moonshot\files\*"; DestDir: "{app}\files"; Flags: ignoreversion recursesubdirs
 Source: "C:\Users\LJR19\Documents\GitHub\moonshot\blogs\*"; DestDir: "{app}\blogs"; Flags: ignoreversion recursesubdirs
-Source: "C:\Users\LJR19\Documents\GitHub\moonshot\*"; Excludes: ".git,common,docs,EIFGENs,installer,models,pages,router,server,tests,themes,.gitattributes,.gitignore,git_moonshot.cmd,moonshot.ecf,moonshot.iss,moonshot.rc,readme.md"; DestDir: "{app}";
+Source: "C:\Users\LJR19\Documents\GitHub\moonshot\*"; Excludes: ".git,common,design,docs,EIFGENs,installer,models,pages,router,server,tests,themes,.gitattributes,.gitignore,git_moonshot.cmd,moonshot.ecf,moonshot.iss,moonshot.rc,readme.md"; DestDir: "{app}";
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

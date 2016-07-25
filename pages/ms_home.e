@@ -63,6 +63,10 @@ feature {NONE} -- Initialization
 			create l_image.make_with_rounded_image ("x.png", "x", l_size, l_size)
 			l_col.add_content (l_image)
 
+			l_col := l_row.columns [4]
+			create l_image.make_with_rounded_image ("grid.png", "kendo_grid", l_size, l_size)
+			l_col.add_content (l_image)
+
 			l_container.add_content (l_row)
 
 			add_content (l_container)

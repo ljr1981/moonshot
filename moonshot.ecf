@@ -5,7 +5,7 @@
 		<description>Moonshot Software website</description>
 		<root class="MS_SERVER" feature="make_and_launch"/>
 		<version major="0" minor="0" release="0" build="1" company="Moonshot Software, LLC" product="Moonshot Software Website" trademark="Moonshot" copyright="2016"/>
-		<option warning="true" void_safety="transitional" syntax="provisional">
+		<option profile="false" warning="true" void_safety="transitional" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
@@ -52,5 +52,32 @@
 		<setting name="console_application" value="false"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
+	</target>
+	<target name="design">
+		<description>Web Application Design Space</description>
+		<root class="MS_DESIGN_SERVER" feature="make_and_launch"/>
+		<file_rule>
+			<exclude>/.git$</exclude>
+			<exclude>/.svn$</exclude>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/tests$</exclude>
+			<include>/design$</include>
+		</file_rule>
+		<option warning="true" void_safety="transitional" syntax="provisional">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<setting name="executable_name" value="moonshot_design"/>
+		<setting name="concurrency" value="scoop"/>
+		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="default_standalone" location="..\ewf\library\server\wsf\default\standalone-safe.ecf"/>
+		<library name="encoder-safe" location="..\ewf\library\text\encoder\encoder-safe.ecf"/>
+		<library name="ewf_ext" location="..\ewf_ext\ewf_ext.ecf"/>
+		<library name="framework" location="..\framework\framework.ecf"/>
+		<library name="html" location="..\html\html.ecf"/>
+		<library name="http-safe" location="..\ewf\library\network\protocol\http\http-safe.ecf"/>
+		<library name="test_extension" location="..\test_extension\test_extension.ecf"/>
+		<library name="wsf-safe" location="..\ewf\library\server\wsf\wsf-safe.ecf"/>
+		<cluster name="design" location=".\design\" recursive="true"/>
 	</target>
 </system>
