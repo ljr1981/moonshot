@@ -10,31 +10,25 @@ class
 	MS_HOME
 
 inherit
-	MS_BASE_PAGE
-		redefine
-			content_setup
-		end
+	EWX_HTML_PAGE_TAG_RESPONSE
+
+create
+	make_standard
 
 feature {NONE} -- Initialization
 
-	navigation_setup
-			-- <Precursor>
-		do
-			do_nothing
-		end
-
-	content_setup
-			-- <Precursor>
+	initialize_widget (a_widget: HTML_TAG)
+			--
 		local
 			l_jumbotron: BS_JUMBOTRON
 			l_image: BS_LINK_IMAGE
 			l_container: BS_CONTAINER
 			l_row: BS_ROW
 			l_col: BS_COLUMN
-			l_well: BS_WELL
-			l_collection: BS_IMAGE_COLLECTION
 			l_size: INTEGER
+			l_card: BS_CARD
 		do
+			logger.write_information ("START: {" + generating_type.out + "}.initialize_widget (" + a_widget.generating_type.out + ")")
 			create l_jumbotron.make_content_centered ({BS}.bleed_to_edge)
 
 			l_jumbotron.item.new_hx.set_text_content ("MOONSHOT")
@@ -44,32 +38,14 @@ feature {NONE} -- Initialization
 			l_jumbotron.item.new_p.set_text_content ("Rocket Science for Everyone!")
 			l_jumbotron.item.add_content (l_jumbotron.item.last_new_p)
 
-			add_content (l_jumbotron)
+			l_jumbotron.item.last_new_image.set_src ("hamburger.png")
+			l_jumbotron.item.last_new_image.set_height ("36")
+			l_jumbotron.item.last_new_image.set_width ("36")
+			l_jumbotron.item.add_content (l_jumbotron.item.last_new_image)
 
-			create l_container.make
+			a_widget.add_content (l_jumbotron)
 
-			create l_row.make_for_all_same (6, [0,6,4,2])
-
-			l_size := 100
-			l_col := l_row.columns [1]
-			create l_image.make_with_rounded_image ("jumbotron.png", "jumbotron", l_size, l_size)
-			l_col.add_content (l_image)
-
-			l_col := l_row.columns [2]
-			create l_image.make_with_rounded_image ("button.png", "buttons", l_size, l_size)
-			l_col.add_content (l_image)
-
-			l_col := l_row.columns [3]
-			create l_image.make_with_rounded_image ("x.png", "x", l_size, l_size)
-			l_col.add_content (l_image)
-
-			l_col := l_row.columns [4]
-			create l_image.make_with_rounded_image ("grid.png", "kendo_grid", l_size, l_size)
-			l_col.add_content (l_image)
-
-			l_container.add_content (l_row)
-
-			add_content (l_container)
+			logger.write_information ("END: {" + generating_type.out + "}.initialize_widget (" + a_widget.generating_type.out + ")")
 		end
 
 note

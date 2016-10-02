@@ -19,6 +19,8 @@ inherit
 			default_create
 		end
 
+	LE_LOGGING_AWARE
+
 create
 	make_and_launch
 
@@ -27,8 +29,10 @@ feature {NONE} -- Initialization
 	initialize
 			-- `initialize' Current with optional "options".
 		do
+			logger.write_information ("START: {" + generating_type.out + "}.initialize")
 			create {WSF_SERVICE_LAUNCHER_OPTIONS} service_options.make_from_array (<<["port", 80]>>)
 			Precursor
+			logger.write_information ("END: {" + generating_type.out + "}.initialize")
 		end
 
 note
