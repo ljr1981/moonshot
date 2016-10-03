@@ -10,9 +10,7 @@
 		</option>
 		<setting name="console_application" value="true"/>
 		<setting name="concurrency" value="scoop"/>
-		<library name="app_env" location="$ISE_LIBRARY\unstable\library\web\cms\library\layout\layout-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
-		<library name="bem" location="..\bem\bem.ecf"/>
 		<library name="bootstrap" location="C:\Users\LJR19\Documents\GitHub\bootstrap\bootstrap.ecf"/>
 		<library name="css" location="..\css\css.ecf"/>
 		<library name="default_standalone" location="..\ewf\library\server\wsf\default\standalone-safe.ecf"/>
@@ -21,8 +19,6 @@
 		<library name="framework" location="..\framework\framework.ecf"/>
 		<library name="html" location="..\html\html.ecf"/>
 		<library name="http-safe" location="..\ewf\library\network\protocol\http\http-safe.ecf"/>
-		<library name="jqmobile" location="..\jqmobile\jqmobile.ecf"/>
-		<library name="json" location="$ISE_LIBRARY\contrib\library\text\parser\json\library\json-safe.ecf"/>
 		<library name="json_ext" location="..\json_ext\json_ext.ecf"/>
 		<library name="logging" location="$ISE_LIBRARY\library\runtime\logging\logging-safe.ecf"/>
 		<library name="logging_extension" location="$GitHub\logging_extension\logging_extension.ecf"/>
