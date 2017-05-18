@@ -17,7 +17,7 @@ create
 
 feature {NONE} -- Initialization
 
-	initialize_widget (a_widget: HTML_TAG)
+	initialize_widget (a_widget: HTML_DIV)
 			--
 		local
 			l_jumbotron: BS_JUMBOTRON
@@ -28,7 +28,6 @@ feature {NONE} -- Initialization
 			l_size: INTEGER
 			l_card: BS_CARD
 		do
-			logger.write_information ("START: {" + generating_type.out + "}.initialize_widget (" + a_widget.generating_type.out + ")")
 			create l_jumbotron.make_content_centered ({BS}.bleed_to_edge)
 
 			l_jumbotron.item.new_hx.set_text_content ("MOONSHOT")
@@ -44,8 +43,29 @@ feature {NONE} -- Initialization
 			l_jumbotron.item.add_content (l_jumbotron.item.last_new_image)
 
 			a_widget.add_content (l_jumbotron)
+		end
 
-			logger.write_information ("END: {" + generating_type.out + "}.initialize_widget (" + a_widget.generating_type.out + ")")
+feature -- CSS & JS
+
+	manually_specified_css_files: ARRAY [STRING]
+		do
+			Result := <<
+				"tether.min.css",
+				"bootstrap.min.css",
+				"style.css",
+				"styles.css"
+				>>
+		end
+
+
+	manually_specified_javascript_files: ARRAY [STRING]
+		do
+			Result := <<
+				"jquery-3.1.1.min.js",
+				"jquery-form-serializer.js",
+				"tether.min.js",
+				"bootstrap.min.js"
+				>>
 		end
 
 note

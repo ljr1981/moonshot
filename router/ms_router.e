@@ -17,8 +17,6 @@ inherit
 			default_create
 		end
 
-	LE_LOGGING_AWARE
-
 create
 	make
 
@@ -27,7 +25,6 @@ feature {NONE} -- Initialization
 	setup_router
 			-- <Precusor>
 		do
-			logger.write_information ("START: {" + generating_type.out + "}.setup_router")
 			Precursor
 			map_uri_agent (uri_moonshot_home, agent moonshot_home_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_home_index_html, agent moonshot_home_handler, no_request_methods)
@@ -35,7 +32,6 @@ feature {NONE} -- Initialization
 			map_uri_agent (uri_moonshot_buttons, agent moonshot_buttons_handler, no_request_methods)
 			map_uri_agent (uri_moonshot_x, agent moonshot_x_handler, no_request_methods)
 			map_uri_agent ("/kendo_grid", agent moonshot_kendo_grid, no_request_methods)
-			logger.write_information ("END: {" + generating_type.out + "}.setup_router")
 		end
 
 feature -- Default Execution
@@ -53,12 +49,9 @@ feature -- Execution
 		local
 			l_page: MS_HOME
 		do
-			logger.write_information ("START: {" + generating_type.out + "}.moonshot_home_handler")
 			print (a_request.request_uri + "%N")
 			create l_page.make_standard (moonshot_title_text, "en", create {HTML_DIV})
-			logger.write_information ("SEND: {" + generating_type.out + "}.moonshot_home_handler")
 			a_response.send (l_page)
-			logger.write_information ("END: {" + generating_type.out + "}.moonshot_home_handler")
 		end
 
 	moonshot_jumbotron_handler (a_request: WSF_REQUEST; a_response: WSF_RESPONSE)

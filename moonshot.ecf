@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-16-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-16-0 http://www.eiffel.com/developers/xml/configuration-1-16-0.xsd" name="moonshot" uuid="340CC23A-8888-B22D-DD5C-00003213FC83" readonly="false">
 	<description>moonshot implementation</description>
 	<target name="moonshot">
 		<description>Moonshot Software website</description>
 		<root class="MS_SERVER" feature="make_and_launch"/>
 		<version major="0" minor="0" release="0" build="1" company="Moonshot Software, LLC" product="Moonshot Software Website" trademark="Moonshot" copyright="2016"/>
-		<option profile="false" warning="true" void_safety="transitional" syntax="provisional">
+		<option profile="false" warning="true" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
-		<setting name="concurrency" value="scoop"/>
+		<capability>
+			<concurrency support="scoop" use="thread"/>
+			<void_safety support="transitional" use="transitional"/>
+		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="bootstrap" location="C:\Users\LJR19\Documents\GitHub\bootstrap\bootstrap.ecf"/>
 		<library name="css" location="..\css\css.ecf"/>
@@ -21,7 +24,7 @@
 		<library name="http-safe" location="..\ewf\library\network\protocol\http\http-safe.ecf"/>
 		<library name="json_ext" location="..\json_ext\json_ext.ecf"/>
 		<library name="logging" location="$ISE_LIBRARY\library\runtime\logging\logging-safe.ecf"/>
-		<library name="logging_extension" location="$GitHub\logging_extension\logging_extension.ecf"/>
+		<library name="logging_extension" location="..\logging_extension\logging_extension.ecf"/>
 		<library name="test_extension" location="..\test_extension\test_extension.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<library name="wsf-safe" location="..\ewf\library\server\wsf\wsf-safe.ecf"/>
@@ -63,12 +66,15 @@
 			<exclude>/tests$</exclude>
 			<include>/design$</include>
 		</file_rule>
-		<option trace="true" profile="true" warning="true" void_safety="transitional" syntax="provisional">
+		<option trace="true" profile="true" warning="true" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
 		<setting name="executable_name" value="moonshot_design"/>
-		<setting name="concurrency" value="scoop"/>
+		<capability>
+			<concurrency support="scoop" use="thread"/>
+			<void_safety support="transitional" use="transitional"/>
+		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="default_standalone" location="..\ewf\library\server\wsf\default\standalone-safe.ecf"/>
 		<library name="encoder-safe" location="..\ewf\library\text\encoder\encoder-safe.ecf"/>
