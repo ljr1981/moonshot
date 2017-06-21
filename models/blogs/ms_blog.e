@@ -33,17 +33,6 @@ feature {NONE} -- Initialization
 				entry := json_object_to_json_string_representation_attached ("entry", l_object)
 			end
 
-feature -- Access
-
-	title,
-	author,
-	date,
-	entry: STRING
-			-- `entry' as {MS_BLOG} for {MS_BLOGS} page.
-		attribute
-			create Result.make_empty
-		end
-
 feature {NONE} -- Implementation: JSON
 
 	convertible_features (a_current: ANY): ARRAY [STRING]
@@ -55,6 +44,27 @@ feature {NONE} -- Implementation: JSON
 						"date",
 						"entry"
 						>>
+		end
+
+	metadata (a_current: ANY): ARRAY [JSON_METADATA]
+		do
+			Result := <<
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default
+						>>
+		end
+
+feature -- Access
+
+	title,
+	author,
+	date,
+	entry: STRING
+			-- `entry' as {MS_BLOG} for {MS_BLOGS} page.
+		attribute
+			create Result.make_empty
 		end
 
 note

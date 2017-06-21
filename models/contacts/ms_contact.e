@@ -51,14 +51,6 @@ feature -- Setters
 				end
 			end
 
-feature -- Access
-
-	first_name: STRING attribute create Result.make_empty end
-	last_name: STRING attribute create Result.make_empty end
-	quote: detachable STRING attribute create Result.make_empty end
-	interests: ARRAY [STRING] attribute create Result.make_empty end
-	response_needed: detachable STRING attribute create Result.make_empty end
-
 feature {NONE} -- Implementation: JSON
 
 	convertible_features (a_current: ANY): ARRAY [STRING]
@@ -71,6 +63,25 @@ feature {NONE} -- Implementation: JSON
 						"response_needed"
 						>>
 		end
+
+	metadata (a_current: ANY): ARRAY [JSON_METADATA]
+		do
+			Result := <<
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default,
+						create {JSON_METADATA}.make_text_default
+						>>
+		end
+
+feature -- Access
+
+	first_name: STRING attribute create Result.make_empty end
+	last_name: STRING attribute create Result.make_empty end
+	quote: detachable STRING attribute create Result.make_empty end
+	interests: ARRAY [STRING] attribute create Result.make_empty end
+	response_needed: detachable STRING attribute create Result.make_empty end
 
 note
 	design_intent: "[
